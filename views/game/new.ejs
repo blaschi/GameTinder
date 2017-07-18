@@ -1,0 +1,12 @@
+    <h1>Admin only!</h1> <br>
+        <form id="form" action="/game/create" method="POST">
+			<fieldset>
+				<legend>Add a game for the users to play</legend>
+				Name of the game: <br> 
+				<input type="text" id="title" name="title"> <br>
+				Genre: <br>
+				<input type="text" id="genre" name="genre"> <br>
+				<input type="submit" value="Create Game">
+			</fieldset>
+		</form>
+        <a href="/session/destroy">Sign Out</a>

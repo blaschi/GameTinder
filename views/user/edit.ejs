@@ -1,0 +1,20 @@
+<h1 class="text-center" style="margin-top:5%">Edite su Perfil</h1>
+<h3 class="text-center text-info">En esta página puede agregar juegos y editar su perfil</h3> <br>
+<form id="profile" class="form-signin" action="/user/update/<%=user.id%>" method="POST">
+    <fieldset>
+        <legend>Edite su perfil</legend>
+        Contacto: <br>
+        <input type="text" id="email" class="form-control" name="email" placeholder="<%=user.email%>"> <br>
+        Agregar Juegos: <br>
+        <%if (games.length > 0) {%>
+            <%for (var game in games) {%>
+                <input type="checkbox" id="game" name="game" value="<%=games[game].id%>"><%=games[game].title%> Genre: <%=games[game].genre%><br>
+            <%}%> <br>
+        <%} else {%>
+            <h4 class="text-danger">Tenés todos los juegos!</h4>
+        <%}%>        
+        <input type="submit" class="btn btn-success btn-block" value="Actualizar">
+    </fieldset>    
+</form>        
+
+

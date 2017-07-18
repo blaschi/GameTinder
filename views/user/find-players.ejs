@@ -1,0 +1,28 @@
+<!--Esta vista se muestra cuando el usuario es autenticado-->
+<h2 class="text-center text-info" style="margin-top:5%">Quién está jugando ahora...</h2><br><br>
+<div class="row">
+    <div class="col-lg-2"></div>  
+    <div class="col-lg-8">
+        <table class='table'>
+            <tr>
+                <th></th>
+                <th>Jugador</th>
+                <th>Estado</th>
+            </tr>
+            <% for (user = 0; user < users.length; user ++) {%>
+                <tr>
+                    <td></td>
+                    <% if (users[user].id != userId) {%>
+                        <td> <h4><%=users[user].userName%></h4></td>
+                        <% if (users[user].online) {%>
+                            <td><img src="/images/icon-online.png"/></td>
+                        <% } else { %>
+                            <td><img src="/images/icon-offline.png"/></td>
+                        <% } %> 
+                    <% } %>  
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    <div class="col-lg-2"></div>  
+</div>

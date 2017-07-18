@@ -1,0 +1,14 @@
+<!--HTML para singup form. Funciones jQuery se encuentran en assets-->
+	<h1 class="bg-info text-center" style="margin-top:5%">Registrate!</h1> 
+		<form id="form" class="form-signin" action="/user/create" method="POST">
+			<fieldset>
+				<legend>Complete el Formulario</legend>
+				Username: <br> 
+				<input type="text" class="form-control" id="userName" name="userName"> <br>
+				Password: <br>
+				<input type="password" class="form-control" id="userPassword" name="userPassword"> <br>
+                Email: <br>
+                <input type="text" class="form-control" id="email" name="email"> <br>
+				<input type="submit" class="btn btn-info btn-block" value="Enviar!">
+			</fieldset>
+		</form>

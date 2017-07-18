@@ -1,0 +1,52 @@
+<!--Esta vista se muestra cuando el usuario es autenticado-->
+<h1 style="margin-top:5%; text-align:center">Bienvenido <%=user.userName%></h1> <br>
+<div class="row">
+    <div class="col-lg-2"></div>  
+    <div class="col-lg-8">
+        <table class='table'>
+            <tr>
+                <th></th>
+                <th>Jugar</th>
+                <th>Genero</th>
+                <th>Dar de baja</th>
+            </tr>
+            <% for (game = 0; game < user.games.length; game ++) {%>
+                <tr>
+                    <td></td>
+                    <td><a href="/user/find-players/<%=user.games[game].id%>"><%=user.games[game].title%></a></td>
+                    <td><%=user.games[game].genre%></td>
+
+                    <!--Boton para eliminar juego del perfil del usuario-->
+                    <td>
+                        <form action="/user/remove-game/<%=user.id%>" method="POST">
+                            <input type="hidden" name="game" value="<%=user.games[game].id%>"/>
+                            <input type="submit" class="btn btn-danger" name="remove" value="Eliminar"/>
+                        </form>
+                    </td>    
+                </tr>    
+            <% } %>
+        </table>
+    </div>
+    <div class="col-lg-2"></div>  
+</div> <br>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div class="well well-sm">
+            <h4 class="text-center text-primary">Contacto: <%=user.email%></h4> <br>
+            <h4 class="text-center text-primary">Juegos Cargados: <%=user.games.length%></h4> <br>
+            <% if (!session.User.admin) { %>
+               <div class="text-center">
+                   <a href="/user/edit/<%=user.id%>" class="btn btn-success">Editar Perfil</a>
+               </div>
+            <% } %>
+
+            <!--Si el usuario es admin, puede agregar juegos-->
+            <% if (session.User.admin) { %>
+               <a href="/game/new">Add a Game</a> 
+            <% } %>
+        </div>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+

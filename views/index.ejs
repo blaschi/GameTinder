@@ -1,0 +1,26 @@
+<!--Pagina principal del site-->
+<div class="container-fluid" style="background-color: black; height: 590px">
+    <div class="row">
+        <div class="jumbotron" style="background-color:skyblue">
+                <h1 style="text-align:center"><b>Game Tinder</b></h1> <br>
+                <p style="text-align:center;font-weight:bold;color:mediumblue">¡Encontrá a tus amigos para jugar a tus juegos favoritos!</p> 
+        </div>
+        <br>
+        <br>
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="border:2px solid grey;border-radius:5px;background-color:lightsteelblue; height: 220px">
+            <h4 style="text-align: center">Hacé clic en <span class="text-info">Signup</span> si no tenés una cuenta. Si ya tenes una hace clic en 
+            <span class="text-info">Login.</span></h4> 
+            <br>
+            <br>    
+            <% if (!session.authenticated) { %>
+                <a href="session/login" class="btn btn-success btn-block">Login</a>
+                <a href="user/signup" class="btn btn-info btn-block">Signup</a>
+            <% } else { %>
+                <a href="session/login" class="btn btn-success btn-block disabled">Login</a>
+                <a href="user/signup" class="btn btn-info btn-block disabled">Signup</a>
+            <% } %>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>	
