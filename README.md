@@ -1,3 +1,3 @@
 # TP
 
-a [Sails](http://sailsjs.org) application
+A Social Network project developed with the Sails Framework for NodeJS.
